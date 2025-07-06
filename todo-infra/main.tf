@@ -4,6 +4,10 @@ module "todo-infra" {
   resource_group_location = "East US"
 }
 
+module "todo-infra2" {
+  source                  = "../modules/azurerm_resource_group"
+  resource_group_name     = "todo-infra-rg2"
+
 module "todo-infra1" {
   source                  = "../modules/azurerm_resource_group"
   resource_group_name     = "todo-infra-rg1"
