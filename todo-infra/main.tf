@@ -3,6 +3,13 @@ module "todo-infra" {
   resource_group_name     = "todo-infra-rg"
   resource_group_location = "East US"
 }
+
+module "todo-infra2" {
+  source                  = "../modules/azurerm_resource_group"
+  resource_group_name     = "todo-infra-rg2"
+  resource_group_location = "East US"
+}
+
 module "todo-infra-vnet" {
   depends_on          = [module.todo-infra]
   source              = "../modules/azurerm_vnet"
