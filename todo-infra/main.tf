@@ -19,6 +19,14 @@ module "todo-infra-vnet" {
   address_space       = ["10.0.0.0/16"]
 }
 
+module "todo-infra-vnet1" {
+  depends_on          = [module.todo-infra]
+  source              = "../modules/azurerm_vnet"
+  resource_group_name = "todo-infra-rg"
+  vnet_name           = "todo-infra-vnet1"
+  vnet_location       = "East US"
+  address_space       = ["10.0.1.0/16"]
+}
 module "todo-infra-vnet2" {
   depends_on          = [module.todo-infra]
   source              = "../modules/azurerm_vnet"
